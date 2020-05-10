@@ -1,8 +1,9 @@
 # Fox game
 
-> This is the [fox game project][site] from [Frontend Masters][fem].
+* This is the [fox game project][site] from [Frontend Masters][fem]. *
 
 ### Requirements
+
 * The game starts in an initialized state. The user must press the center game to get started.
 * Users can switch between the three icons on the bottom using the left and right button. To press one of the icons, they will click the middle button. Users cannot directly click the icons.
 * If they reach the end of the icons and try to go further (click the right button when the right-most icon is selected) it should loop around.
@@ -23,5 +24,7 @@
 * The fox should not be able to die, get hungry, poop, be fed, have the poop cleaned up, or fall asleep when it is being fed, sleeping, hatching, or dead.
 * While in general I'm a huge advocate for responsive designs and making things work on any viewport size, this one time I'm absolving you of that responsiblity and you can just assume a fixed desktop browser size.
 
+🦊
+
 [fem]: https://frontendmasters.com/
-[site]: https://btholt.github.io/project-fox-game-site/the-project
+[site]: https://btholt.github.io/project-fox-game-site/
