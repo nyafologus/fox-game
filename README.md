@@ -1,1 +1,1 @@
-# fox-game
+This is the [fox game project][site] from [Frontend Masters][fem].
