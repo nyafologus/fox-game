@@ -5,12 +5,17 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
     "prettier": "^2.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
-    "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\""
+    "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
+    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
+    "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\""
   },
   "repository": {
     "type": "git",
