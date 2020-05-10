@@ -1,0 +1,24 @@
+{
+  "name": "fox-game",
+  "version": "1.0.0",
+  "description": "*This is the [fox game project][site] from [Frontend Masters][fem].*",
+  "main": "index.js",
+  "dependencies": {
+    "prettier": "^2.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyafologus/fox-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyafologus/fox-game/issues"
+  },
+  "homepage": "https://github.com/nyafologus/fox-game#readme"
+}
