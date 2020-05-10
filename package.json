@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "*This is the [fox game project][site] from [Frontend Masters][fem].*",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+    "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\""
   },
   "repository": {
     "type": "git",
