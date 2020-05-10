@@ -8,10 +8,11 @@
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
     "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
