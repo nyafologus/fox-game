@@ -1,7 +1,7 @@
 {
   "name": "fox-game",
   "version": "1.0.0",
-  "description": "*This is the [fox game project][site] from [Frontend Masters][fem].*",
+  "description": "Tamagochi fox game",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
