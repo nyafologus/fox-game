@@ -28,3 +28,15 @@ body {
   width: 762px;
   position: relative;
 }
+
+.game {
+  width: 628px;
+  height: 577px;
+  position: absolute;
+  top: 62px;
+  left: 67px;
+}
+
+.hidden {
+  display: none;
+}
