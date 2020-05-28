@@ -74,3 +74,18 @@ body {
   top: 300px;
   left: 160px;
 }
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: hsl(271, 76%, 53%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* hides itself in case there is no text in it */
+.modal:empty,
+.modal-inner:empty {
+  display: none;
+}
