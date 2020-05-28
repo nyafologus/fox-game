@@ -18,3 +18,13 @@ body {
   right: 0;
   bottom: 0;
 }
+
+.inner {
+  position: relative;
+}
+
+.frame {
+  height: 762px;
+  width: 762px;
+  position: relative;
+}
