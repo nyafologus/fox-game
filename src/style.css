@@ -82,6 +82,10 @@ body {
   right: 0;
   background-color: hsl(271, 76%, 53%);
   color: hsl(0, 0%, 100%);
+  padding: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
 }
 
 /* hides itself in case there is no text in it */
