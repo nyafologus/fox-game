@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
-import game from "./gameState";
+import game from './gameState';
+import initButtons from './buttons';
 
 // 3000 ms
 // screaming case implies the value never changes
-const TICK_RATE = 3000;
+import { TICK_RATE } from './constants';
 
 async function init() {
-  console.log("starting game");
+  console.log('starting game');
+  initButtons(game.handleUserAction);
 
   let nextTimeToTick = Date.now();
 
