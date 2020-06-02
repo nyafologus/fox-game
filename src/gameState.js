@@ -5,7 +5,13 @@ const gameState = {
   current: 'INIT',
   // keep track of what clock tick we are currently on
   clock: 1,
+  // -1 is not here to do any opereations on the clock value
+  // -1 serves as a sentinel to indicate the state of being "not currently active"
+  // it could be denoted with undefined instead of -1
+  // it is -1 so it is the same type as the clock value
+  wakeTime: -1,
   tick() {
+    // increment current time
     this.clock++;
     console.log('clock', this.clock);
     return this.clock;
@@ -14,6 +20,8 @@ const gameState = {
     console.log('hatching');
     // move finite state machine from INIT to HATCHING
     this.current = 'HATCHING';
+    // define wake up time
+    this.wakeTime = this.clock + 3;
   },
   handleUserAction(icon) {
     console.log(icon);
