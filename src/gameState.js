@@ -10,6 +10,11 @@ const gameState = {
     console.log('clock', this.clock);
     return this.clock;
   },
+  startGame() {
+    console.log('hatching');
+    // move finite state machine from INIT to HATCHING
+    this.current = 'HATCHING';
+  },
   handleUserAction(icon) {
     console.log(icon);
   }

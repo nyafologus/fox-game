@@ -2,6 +2,7 @@ import { ICONS } from './constants.js';
 
 //  handles UI logic (button clicks, hover events, DOM stuff)
 const toggleHighlighted = (icon, show) =>
+  // make sure to include the . class selector at the beginning
   document.querySelector(`.${ICONS[icon]}-icon`).classList.toggle('highlighted', show);
 
 export default function initButtons(handleUserAction) {
