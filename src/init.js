@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import game from './gameState';
+import game, { handleUserAction } from './gameState';
 import initButtons from './buttons';
 
 // 3000 ms
@@ -8,7 +8,7 @@ import { TICK_RATE } from './constants';
 
 async function init() {
   console.log('starting game');
-  initButtons(game.handleUserAction);
+  initButtons(handleUserAction);
 
   let nextTimeToTick = Date.now();
 

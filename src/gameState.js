@@ -36,8 +36,39 @@ const gameState = {
   },
 
   handleUserAction(icon) {
-    console.log(icon);
+    // can't do actions while in these states
+    if ([ 'SLEEP', 'FEEDING', 'CELEBRATING', 'HATCHING' ].includes(this.current)) {
+      // do nothing
+      return;
+    }
+
+    if (this.current === 'INIT' || this.current === 'DEAD') {
+      this.startGame();
+      return;
+    }
+
+    // execute the currently selected action
+    switch (icon) {
+      case 'weather':
+        this.changeWeather();
+        break;
+      case 'poop':
+        this.cleanUpPoop();
+        break;
+      case 'fish':
+        this.feed();
+        break;
+    }
+  },
+  changeWeather() {
+    console.log('changeWeather');
+  },
+  cleanUpPoop() {
+    console.log('cleanUpPoop');
+  },
+  feed() {
+    console.log('feed');
   }
 };
 
-export default gameState;
+export const handleUserAction = gameState.handleUserAction.bind(gameState);
