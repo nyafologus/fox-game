@@ -21,6 +21,7 @@ const gameState = {
 
     return this.clock;
   },
+
   startGame() {
     console.log('hatching');
     // move finite state machine from INIT to HATCHING
@@ -60,15 +61,19 @@ const gameState = {
         break;
     }
   },
+
   changeWeather() {
     console.log('changeWeather');
   },
+
   cleanUpPoop() {
     console.log('cleanUpPoop');
   },
+
   feed() {
     console.log('feed');
   }
 };
 
+export default gameState;
 export const handleUserAction = gameState.handleUserAction.bind(gameState);
