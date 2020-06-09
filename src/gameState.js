@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH } from './constants';
+import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH, getNextHungerTime } from './constants';
 import { modFox, modScene } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
@@ -13,6 +13,8 @@ const gameState = {
   // it is -1 so it is the same type as the clock value
   wakeTime: -1,
   sleepTime: -1,
+  hungryTime: -1,
+
   tick() {
     // increment current time
     this.clock++;
@@ -22,6 +24,8 @@ const gameState = {
       this.wake();
     } else if (this.clock === this.sleepTime) {
       this.sleep();
+    } else if (this.clock === this.hungryTime) {
+      this.getHungry();
     }
 
     return this.clock;
@@ -45,6 +49,7 @@ const gameState = {
     this.scene = Math.random() > RAIN_CHANCE ? 0 : 1;
     modScene(SCENES[this.scene]);
     this.sleepTime = this.clock + DAY_LENGTH;
+    this.hungryTime = getNextHungerTime(this.clock);
   },
 
   sleep() {
@@ -52,6 +57,12 @@ const gameState = {
     modFox('sleep');
     modScene('night');
     this.wakeTime = this.clock + NIGHT_LENGTH;
+  },
+
+  getHungry() {
+    this.current = 'HUNGRY';
+    this.hungryTime = -1;
+    modFox('hungry');
   },
 
   handleUserAction(icon) {
