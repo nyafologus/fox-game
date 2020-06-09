@@ -12,6 +12,7 @@ const gameState = {
   // it could be denoted with undefined instead of -1
   // it is -1 so it is the same type as the clock value
   wakeTime: -1,
+  sleepTime: -1,
   tick() {
     // increment current time
     this.clock++;
@@ -19,6 +20,8 @@ const gameState = {
 
     if (this.clock === this.wakeTime) {
       this.wake();
+    } else if (this.clock === this.sleepTime) {
+      this.sleep();
     }
 
     return this.clock;
@@ -41,7 +44,10 @@ const gameState = {
     modFox('idling');
     this.scene = Math.random() > RAIN_CHANCE ? 0 : 1;
     modScene(SCENES[this.scene]);
+    this.sleepTime = this.clock + DAY_LENGTH;
   },
+
+  sleep() {},
 
   handleUserAction(icon) {
     // can't do actions while in these states
