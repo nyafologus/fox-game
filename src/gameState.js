@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { SCENES, RAIN_CHANCE } from './constants';
+import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH } from './constants';
 import { modFox, modScene } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
