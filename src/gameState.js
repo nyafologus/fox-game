@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+import { SCENES, RAIN_CHANCE } from './constants';
+import { modFox, modScene } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
 const gameState = {
@@ -28,12 +30,17 @@ const gameState = {
     this.current = 'HATCHING';
     // define wake up time
     this.wakeTime = this.clock + 3;
+    modFox('egg');
+    modScene('day');
   },
 
   wake() {
     console.log('hatched');
     this.current = 'IDLING';
     this.wakeTime = -1;
+    modFox('idling');
+    this.scene = Math.random() > RAIN_CHANCE ? 0 : 1;
+    modScene(SCENES[this.scene]);
   },
 
   handleUserAction(icon) {
