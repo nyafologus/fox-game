@@ -1,6 +1,13 @@
+// modding the scene in order to be able to re-use functionality, for example:
+// restarting the game after death / waking up after night
+
+// modFox("egg");
+// modFox("idling");
 export const modFox = function modFox(state) {
   document.querySelector('.fox').className = `fox fox-${state}`;
 };
+
+// modScene("day");
 export const modScene = function modScene(state) {
   document.querySelector('.game').className = `game ${state}`;
 };
