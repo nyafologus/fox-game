@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH, getNextHungerTime } from './constants';
+import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH, getNextHungerTime, getNextDieTime } from './constants';
 import { modFox, modScene } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
@@ -14,6 +14,7 @@ const gameState = {
   wakeTime: -1,
   sleepTime: -1,
   hungryTime: -1,
+  dieTime: -1,
 
   tick() {
     // increment current time
@@ -26,6 +27,8 @@ const gameState = {
       this.sleep();
     } else if (this.clock === this.hungryTime) {
       this.getHungry();
+    } else if (this.clock === this.dieTime) {
+      this.die();
     }
 
     return this.clock;
@@ -61,8 +64,13 @@ const gameState = {
 
   getHungry() {
     this.current = 'HUNGRY';
+    this.dieTime = getNextDieTime(this.clock);
     this.hungryTime = -1;
     modFox('hungry');
+  },
+
+  die() {
+    console.log('die');
   },
 
   handleUserAction(icon) {
