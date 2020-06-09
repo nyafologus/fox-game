@@ -47,7 +47,12 @@ const gameState = {
     this.sleepTime = this.clock + DAY_LENGTH;
   },
 
-  sleep() {},
+  sleep() {
+    this.state = 'SLEEP';
+    modFox('sleep');
+    modScene('night');
+    this.wakeTime = this.clock + NIGHT_LENGTH;
+  },
 
   handleUserAction(icon) {
     // can't do actions while in these states
