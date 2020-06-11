@@ -1,5 +1,13 @@
 /* eslint-disable no-console */
-import { SCENES, RAIN_CHANCE, DAY_LENGTH, NIGHT_LENGTH, getNextHungerTime, getNextDieTime } from './constants';
+import {
+  SCENES,
+  RAIN_CHANCE,
+  DAY_LENGTH,
+  NIGHT_LENGTH,
+  getNextHungerTime,
+  getNextDieTime,
+  getNextPoopTime
+} from './constants';
 import { modFox, modScene } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
@@ -109,6 +117,16 @@ const gameState = {
 
   feed() {
     console.log('feed');
+    // can only feed when hungry
+    if (this.current !== 'HUNGRY') {
+      return;
+    }
+
+    this.current = 'FEEDING';
+    this.dieTime = -1;
+    this.poopTime = getNextPoopTime(this.clock);
+    modFox('eating');
+    this.timeToStartCelebrating = this.clock + 2;
   }
 };
 
