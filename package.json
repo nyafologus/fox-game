@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Tamagochi fox game",
   "main": "index.js",
-  "homepage": "http://nyafologus.github.io/fox-game",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^7.0.0",
@@ -35,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/nyafologus/fox-game/issues"
   },
-  "homepage": "https://github.com/nyafologus/fox-game#readme",
+  "homepage": "https://github.com/nyafologus/fox-game",
   "browserslist": [
     "since 2018-01"
   ]
