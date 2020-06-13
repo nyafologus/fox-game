@@ -14,6 +14,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "jest",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
