@@ -8,7 +8,7 @@ import {
   getNextDieTime,
   getNextPoopTime
 } from './constants';
-import { modFox, modScene, togglePoopBag } from './ui';
+import { modFox, modScene, togglePoopBag, writeModal } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
 const gameState = {
@@ -59,6 +59,7 @@ const gameState = {
     this.wakeTime = this.clock + 3;
     modFox('egg');
     modScene('day');
+    writeModal();
   },
 
   wake() {
@@ -93,6 +94,7 @@ const gameState = {
     modScene('dead');
     modFox('dead');
     this.sleepTime = -1;
+    writeModal('The fox died :( <br/> Press the middle button to start');
   },
 
   handleUserAction(icon) {
