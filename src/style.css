@@ -80,6 +80,9 @@ body {
   top: 0;
   left: 0;
   right: 0;
+}
+
+.modal-inner {
   background-color: hsl(271, 76%, 53%);
   color: hsl(0, 0%, 100%);
   padding: 25px;
