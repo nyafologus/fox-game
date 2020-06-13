@@ -8,7 +8,7 @@ import {
   getNextDieTime,
   getNextPoopTime
 } from './constants';
-import { modFox, modScene } from './ui';
+import { modFox, modScene, togglePoopBag } from './ui';
 
 // handles business logic (the clock, the state machine, all the actual logic behind the game)
 const gameState = {
@@ -133,6 +133,12 @@ const gameState = {
 
   cleanUpPoop() {
     console.log('cleanUpPoop');
+    if (this.current === 'POOPING') {
+      this.dieTime = -1;
+      togglePoopBag(true);
+      this.startCelebrating();
+      this.hungryTime = getNextHungerTime(this.clock);
+    }
   },
 
   feed() {
@@ -159,6 +165,7 @@ const gameState = {
     this.timeToEndCelebrating = -1;
     this.current = 'IDLING';
     this.determineFoxState();
+    togglePoopBag(false);
   },
   determineFoxState() {
     if (this.current === 'IDLING') {
