@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Tamagochi fox game",
   "main": "index.js",
+  "homepage": "http://nyafologus.github.io/fox-game",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
+    "gh-pages": "^3.0.0",
     "jest": "^26.0.1",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5"
@@ -15,6 +17,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "jest",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
