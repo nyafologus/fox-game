@@ -89,6 +89,10 @@ const gameState = {
 
   die() {
     console.log('die');
+    this.current = 'DEAD';
+    modScene('dead');
+    modFox('dead');
+    this.sleepTime = -1;
   },
 
   handleUserAction(icon) {
