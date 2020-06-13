@@ -67,6 +67,7 @@ const gameState = {
     modScene(SCENES[this.scene]);
     this.sleepTime = this.clock + DAY_LENGTH;
     this.hungryTime = getNextHungerTime(this.clock);
+    this.determineFoxState();
   },
 
   sleep() {
@@ -115,6 +116,9 @@ const gameState = {
 
   changeWeather() {
     console.log('changeWeather');
+    this.scene = (1 + this.scene) % SCENES.length;
+    modScene(SCENES[this.scene]);
+    this.determineFoxState();
   },
 
   cleanUpPoop() {
