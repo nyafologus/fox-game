@@ -25,6 +25,7 @@ const gameState = {
   dieTime: -1,
   timeToStartCelebrating: -1,
   timeToEndCelebrating: -1,
+  poopTime: -1,
 
   tick() {
     // increment current time
@@ -43,6 +44,8 @@ const gameState = {
       this.startCelebrating();
     } else if (this.clock === this.timeToEndCelebrating) {
       this.endCelebrating();
+    } else if (this.clock === this.poopTime) {
+      this.poop();
     }
 
     return this.clock;
@@ -119,6 +122,13 @@ const gameState = {
     this.scene = (1 + this.scene) % SCENES.length;
     modScene(SCENES[this.scene]);
     this.determineFoxState();
+  },
+
+  poop() {
+    this.current = 'POOPING';
+    this.poopTime = -1;
+    this.dieTime = getNextDieTime(this.clock);
+    modFox('pooping');
   },
 
   cleanUpPoop() {
